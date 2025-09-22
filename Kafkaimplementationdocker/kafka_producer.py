@@ -1,22 +1,21 @@
-import pandas as pd
+# kafka_producer.py
 from kafka import KafkaProducer
-import json
+import pandas as pd
 import time
+import json
 
-# Load the dataset
-df = pd.read_csv('creditcard.csv')
+# ✅ Load the correct test dataset
+df = pd.read_csv("test_frauds2.csv")
 
-# Create Kafka producer
 producer = KafkaProducer(
     bootstrap_servers='localhost:9092',
-    value_serializer=lambda v: json.dumps(v).encode('utf-8')
+    value_serializer=lambda x: json.dumps(x).encode('utf-8')
 )
 
-# Stream the data row by row
-for idx, row in df.iterrows():
-    producer.send('test-topic', value=row.to_dict())
-    print(f"Sent record {idx}")
+for _, row in df.iterrows():
+    producer.send("transactions", value=row.to_dict())
+    print("📤 Sent:", row.to_dict())
     time.sleep(1)
 
-producer.flush()
-producer.close()
+print("✅ All test frauds sent.")
+

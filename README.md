@@ -66,7 +66,7 @@ kafka-python
 #### Start Zookeeper
 ```bin/zookeeper-server-start.sh config/zookeeper.properties```
 
-# Start Kafka broker
+#### Start Kafka broker
 ```bin/kafka-server-start.sh config/server.properties```
 
 #### 4. Streamlit deployment

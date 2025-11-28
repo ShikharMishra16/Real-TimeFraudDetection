@@ -2,20 +2,20 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# 📥 Load the dataset
+# Load the dataset
 df = pd.read_csv("creditcard.csv")
 
-# 🔍 Overview
+# Overview
 print("Dataset Shape:", df.shape)
 print("\nFirst 5 Rows:\n", df.head())
 print("\nData Types:\n", df.dtypes)
 print("\nMissing Values:\n", df.isnull().sum())
 print("\nClass Distribution (0 = normal, 1 = fraud):\n", df['Class'].value_counts())
 
-# 🧮 Summary statistics
+# Summary statistics
 print("\nStatistical Summary:\n", df.describe())
 
-# 📊 Visualizations
+# Visualizations
 
 # Class distribution (Imbalance check)
 plt.figure(figsize=(6, 4))

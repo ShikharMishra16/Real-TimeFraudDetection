@@ -23,5 +23,5 @@ df['Amt_vs_HourAvg'] = df.apply(lambda row: row['Amount'] / avg_amt_per_hour[row
 df = pd.get_dummies(df, columns=['Amount_Bin'], drop_first=True)
 
 df.to_csv("feature_engineered_creditcard.csv", index=False)
-print("✅ Feature engineered dataset saved as 'feature_engineered_creditcard.csv'")
-print("✅ Final shape after feature engineering:", df.shape)
+print("Feature engineered dataset saved as 'feature_engineered_creditcard.csv'")
+print("Final shape after feature engineering:", df.shape)

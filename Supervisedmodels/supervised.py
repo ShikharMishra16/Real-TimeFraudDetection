@@ -71,7 +71,7 @@ xgb_report, xgb_extra, xgb_curves = get_metrics(xgb, "XGBoost")
 # Save reports
 pd.concat([lr_report, rf_report, xgb_report]).to_csv("supervised_classification_report.csv", index=False)
 pd.concat([lr_extra, rf_extra, xgb_extra]).to_csv("supervised_auc_logloss_report.csv", index=False)
-print("✅ Metrics saved to CSVs")
+print("Metrics saved to CSVs")
 
 # -----------------------------------------
 # 5. Plot ROC & PR Curves
@@ -121,4 +121,4 @@ joblib.dump(lr, "models/logistic_regression_model.pkl")         # Logistic Regre
 # If you used a scaler (like StandardScaler), save it here too:
 # joblib.dump(scaler, "models/scaler.pkl")                      # Uncomment if scaler is used
 
-print("✅ All models saved in 'models/' folder")
+print("All models saved in 'models/' folder")
